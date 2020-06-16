@@ -4,7 +4,8 @@ Rails.application.routes.draw do
   root to: "pages#home"
 
   resources :tags do 
-    resources :posts
   end 
-
+  
+  resources :posts
+  
 end
