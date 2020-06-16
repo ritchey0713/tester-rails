@@ -1,0 +1,7 @@
+hello my title is <%= @post.title %>
+
+my content is <%= @post.content%>
+
+<%= button_to "long way to delete", {controller: "posts", action: "destroy", id: @post.id}, method: :delete %>
+
+<%= button_to "delete", @post, method: :delete %>
