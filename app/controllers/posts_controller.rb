@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
   def index 
-    byebug
-    @posts = Post.all
+    @posts = Post.all.where(tag_id: params[:tag_id])
   end 
 
   def new 
+    @tag = Tag.find_by(id: params[:tag_id])
     @post = Post.new
   end 
   

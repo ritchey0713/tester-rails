@@ -3,3 +3,5 @@ hello my title is <%= @tag.title %>
 <%= button_to "long way to delete", {controller: "tags", action: "destroy", id: @tag.id}, method: :delete %>
 
 <%= button_to "delete", @tag, method: :delete %>
+
+<%= link_to "create a post", new_tag_post_path(@tag)%>

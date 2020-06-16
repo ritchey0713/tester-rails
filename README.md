@@ -24,13 +24,6 @@ Things you may want to cover:
 * ...
 
 
-
-# add tag migration 
-# test assocs 
-# create forms 
-# add validations 
-# add error msgs 
-# partials 
 # nest posts inside tags(create tag with new post)
 # nest routes
 

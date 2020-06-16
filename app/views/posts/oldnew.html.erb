@@ -1,0 +1,12 @@
+<%= form_tag("/posts") method: "GET"  do %>
+  <label>Title:</label>
+  <input name="post[title]">
+  <label>content:</label>
+  <input name="post[content]">
+  <label>Tags:</label>
+  <select name="tags">
+  <% Tag.all.each do |tag| %>
+    <option value=<%= tag.id %>> <%= tag.title %> </option>
+  <% end %>
+  <input type="submit">
+<% end %>

@@ -1,16 +1,9 @@
-<%= form_tag("/posts") do %>
-  <label>title:</label>
-  <input type="text" name="post[title]">
-
-  <label>content:</label>
-  <input type="text" name="post[content]">
-
-  <label>Tag:</label>
-  <select name="tags">
-    <% Tag.all.each do |tag| %>
-      <option value=<%= tag.id %>><%= tag.title %></option>
-    <% end %>
-
-  <input type="submit">
+<%= form_for [@tag, @post] do |f| %>
+  <%= render partial: "/partials/errors", locals: {obj: @post} %>
+  <%= f.label :title %>
+  <%= f.text_field :title, class: @post.errors ? nil : "red" %>
+  <%= f.label :content %>
+  <%= f.text_field :content %>
+  <%= f.collection_select(:tag_id, Tag.all, :id, :title)%>
+  <%= f.submit "Create Post! :D"%>
 <% end %>
-
